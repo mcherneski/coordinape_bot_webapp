@@ -16,8 +16,6 @@ import { AppRoot } from '@telegram-apps/telegram-ui'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { ErrorPage } from '@/components/ErrorPage'
 import { useTelegramMock } from "../hooks/useTelegramMock"
-// import {}
-
 
 function App(props: PropsWithChildren) {
     const lp = useLaunchParams()
@@ -36,6 +34,16 @@ function App(props: PropsWithChildren) {
     useEffect(() => {
         return viewPort && bindViewportCSSVars(viewPort)
     }, [viewPort])
+
+    if(!lp || Object.keys(lp).length === 0) {
+        return (
+            
+            <div>
+                <h1>Application Not launched from Telegram</h1>
+                <p>Please launch this app as a MiniApp</p>
+            </div>
+        )
+    }
 
     return (
         <AppRoot
