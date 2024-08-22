@@ -15,7 +15,7 @@ import { useDidMount } from "../hooks/useDidMount"
 import { AppRoot } from '@telegram-apps/telegram-ui'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { ErrorPage } from '@/components/ErrorPage'
-import { useTelegramMock } from "../hooks/useTelegramMock"
+// import { useTelegramMock } from "../hooks/useTelegramMock"
 
 function App(props: PropsWithChildren) {
     const lp = useLaunchParams()
